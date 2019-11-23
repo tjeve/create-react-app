@@ -8,11 +8,19 @@ class MyContactInfoWithState extends React.Component {
         address:"",
         city:"",
         state:"",
-        zipCode:""
+        zipCode:"",
+        people: []
     }
     
-    handleSubmit = () => {
-        alert("Contact Information was submitted:" + this.state.value)
+    handleSubmit = (submitEvent) => {
+        submitEvent.preventDefault() //prevents your console logs from immediately disappearing
+        alert("Contact Information was submitted:" + this.state.people)
+        console.log(this.state)
+        const newPeople = [...this.state.people]
+        newPeople.push({
+            people: newPeople
+        })
+        console.log(this.people)
     }
 
     render () {
@@ -20,29 +28,32 @@ class MyContactInfoWithState extends React.Component {
         return (
             <div className="container">
                 <form onSubmit={ this.handleSubmit }>
-                    <div>
+                    <div className="form-group">
                         <input type="text" name="firstName"
-                        placeholder="First Name"></input>
+                        placeholder="First Name" 
+                        value={this.state.firstName}></input>
                         <input type="text" name="lastName" 
                         placeholder="Last Name"></input>
                     </div>
-                    <div>
+                    <div className="form-group">
                         <input type="text" name="eMail"
                         placeholder="Email"></input>
                         <input type="text" name="phone Number"
                         placeholder="Phone"></input>
                     </div>
-                    <div>
-                        <input type="text" name="address"
-                        placeholder="Address"></input>
-                        <input type="text" name="city"
-                        placeholder="City"></input>
-                    </div>
-                    <div>
-                        <input type="text" name="state"
-                        placeholder="State"></input>
-                        <input type="text" name="zipcode"
-                        placeholder="Zipcode"></input>
+                    <div className="form-group">
+                        <div>
+                            <input type="text" name="address"
+                            placeholder="Address"></input>
+                            <input type="text" name="city"
+                            placeholder="City"></input>
+                        </div>
+                        <div>
+                            <input type="text" name="state"
+                            placeholder="State"></input>
+                            <input type="text" name="zipcode"
+                            placeholder="Zipcode"></input>
+                        </div>
                     </div>
                     <input type="submit"></input>
                 </form>
