@@ -21,3 +21,5 @@ This is an app that uses React and allows you to add and edit contacts.
 * Add a search box above your contact list.
 * When typing use the entered text to filter down the list of contacts shown.
 * The search should search through all field values.
+
+This is a project from DigitalCrafts
