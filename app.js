@@ -16,7 +16,31 @@ class MyContactInfoWithState extends React.Component {
         return (
             <div className="container">
                 <form>
-                    <input type="text" ></input>
+                    <div>
+                        <input type="text" name="firstName"
+                        placeholder="First Name"></input>
+                        <input type="text" name="lastName" 
+                        placeholder="Last Name"></input>
+                    </div>
+                    <div>
+                        <input type="text" name="eMail"
+                        placeholder="Email"></input>
+                        <input type="text" name="phone Number"
+                        placeholder="Phone"></input>
+                    </div>
+                    <div>
+                        <input type="text" name="address"
+                        placeholder="Address"></input>
+                        <input type="text" name="city"
+                        placeholder="City"></input>
+                    </div>
+                    <div>
+                        <input type="text" name="state"
+                        placeholder="State"></input>
+                        <input type="text" name="zipcode"
+                        placeholder="Zipcode"></input>
+                    </div>
+                    <button><input type="submit"></input></button>
                 </form>
             </div>
         )
