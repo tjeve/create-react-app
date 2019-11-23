@@ -11,11 +11,15 @@ class MyContactInfoWithState extends React.Component {
         zipCode:""
     }
     
+    handleSubmit = () => {
+        alert("Contact Information was submitted:" + this.state.value)
+    }
+
     render () {
 
         return (
             <div className="container">
-                <form>
+                <form onSubmit={ this.handleSubmit }>
                     <div>
                         <input type="text" name="firstName"
                         placeholder="First Name"></input>
@@ -40,7 +44,7 @@ class MyContactInfoWithState extends React.Component {
                         <input type="text" name="zipcode"
                         placeholder="Zipcode"></input>
                     </div>
-                    <button><input type="submit"></input></button>
+                    <input type="submit"></input>
                 </form>
             </div>
         )
