@@ -1,5 +1,5 @@
 # Contacts App
-This is an app that uses React and allows you to add and edit contacts.
+This is an app that uses React and allows you to add and edit contacts then displays them.
 
 ## Setup
 * Use create-react-app to create a React app. Remove boilerplate as needed.
