@@ -20,7 +20,6 @@ class MyContactInfoWithState extends React.Component {
 
     handleFormSubmit = (submitEvent) => {
         submitEvent.preventDefault() //prevents your console logs from immediately disappearing
-
         const newPeople = [...this.state.people]
         newPeople.push({
             people: newPeople,
@@ -48,9 +47,23 @@ class MyContactInfoWithState extends React.Component {
     }
 
     render () {
-        console.log("People:" + this.state.people)
+        console.log(this.state.people)
         return (
             <div className="container">
+                <ul>
+                    {this.state.people.map((person, index) => {
+                        return (<li key = { index }>
+                            { person.firstName } { person.lastName }
+                            { person.eMail } { person.phoneNumber }
+                            { person.address } { person.city }
+                            { person.state } { person.zipCode }
+                            </li>)
+                    })}
+                </ul>
+
+
+
+                <label>Name:</label>
                 <form onSubmit={ this.handleFormSubmit }>
                     <div className="form-group">
                         <input type="text" name="firstName"
@@ -61,6 +74,7 @@ class MyContactInfoWithState extends React.Component {
                         placeholder="Last Name"
                         onChange={this.handleInputChange}></input>
                     </div>
+                    <label>Contact:</label>
                     <div className="form-group">
                         <input type="text" name="eMail"
                         placeholder="Email"
@@ -70,6 +84,7 @@ class MyContactInfoWithState extends React.Component {
                         onChange={this.handleInputChange}></input>
                     </div>
                     <div className="form-group">
+                        <label>Address:</label>
                         <div>
                             <input type="text" name="address"
                             placeholder="Address"
